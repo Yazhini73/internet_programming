@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Examination</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+        }
+
+        .box {
+            width: 700px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+
+        .question {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+
+        /* Unanswered question */
+        .question.unanswered {
+            background-color: #ffcccc;
+            border: 2px solid red;
+        }
+
+        label {
+            display: block;
+            padding: 8px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        label:hover {
+            background-color: rgb(138, 138, 138);
+        }
+
+        button {
+            display: block;
+            margin: 25px auto;
+            padding: 10px 30px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        /* Correct answer message */
+        .correct {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: green;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Wrong answer message */
+        .wrong {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8d7da;
+            color: red;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Correct answer shown for wrong selection */
+        .correct-answer {
+            margin-top: 5px;
+            padding: 8px;
+            background-color: #fff3cd;
+            color: #856404;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+            color: green;
+            font-size: 20px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Online Examination</h1>
+
+    <h3>Internet Programming MCQ</h3>
+
+    <!-- Question 1 -->
+    <div class="question" id="question1">
+
+        <b>1. HTML stands for?</b>
+
+        <label>
+            <input type="radio" name="q1" value="A">
+            A. Hyper Text Markup Language
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="B">
+            B. High Text Machine Language
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="C">
+            C. Hyper Tool Markup Language
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="D">
+            D. Home Text Language
+        </label>
+
+        <div class="feedback" id="feedback1"></div>
+
+    </div>
+
+
+    <!-- Question 2 -->
+    <div class="question" id="question2">
+
+        <b>2. Which language is used for styling web pages?</b>
+
+        <label>
+            <input type="radio" name="q2" value="A">
+            A. HTML
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="B">
+            B. CSS
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="C">
+            C. Java
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="D">
+            D. Python
+        </label>
+
+        <div class="feedback" id="feedback2"></div>
+
+    </div>
+
+
+    <!-- Question 3 -->
+    <div class="question" id="question3">
+
+        <b>3. Which language is used to make web pages interactive?</b>
+
+        <label>
+            <input type="radio" name="q3" value="A">
+            A. CSS
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="B">
+            B. HTML
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="C">
+            C. JavaScript
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="D">
+            D. SQL
+        </label>
+
+        <div class="feedback" id="feedback3"></div>
+
+    </div>
+
+
+    <!-- Question 4 -->
+    <div class="question" id="question4">
+
+        <b>4. Which protocol is used for web communication?</b>
+
+        <label>
+            <input type="radio" name="q4" value="A">
+            A. HTTP
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="B">
+            B. FTP
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="C">
+            C. SMTP
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="D">
+            D. TCP
+        </label>
+
+        <div class="feedback" id="feedback4"></div>
+
+    </div>
+
+
+    <!-- Question 5 -->
+    <div class="question" id="question5">
+
+        <b>5. Which tag is used to create a hyperlink?</b>
+
+        <label>
+            <input type="radio" name="q5" value="A">
+            A. &lt;p&gt;
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="B">
+            B. &lt;a&gt;
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="C">
+            C. &lt;h1&gt;
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="D">
+            D. &lt;br&gt;
+        </label>
+
+        <div class="feedback" id="feedback5"></div>
+
+    </div>
+
+
+    <!-- Question 6 -->
+    <div class="question" id="question6">
+
+        <b>6. Which HTML tag is used to create a table?</b>
+
+        <label>
+            <input type="radio" name="q6" value="A">
+            A. td
+        </label>
+
+        <label>
+            <input type="radio" name="q6" value="B">
+            B. th
+        </label>
+
+        <label>
+            <input type="radio" name="q6" value="C">
+            C. tr
+        </label>
+
+        <label>
+            <input type="radio" name="q6" value="D">
+            D. table-row
+        </label>
+
+        <div class="feedback" id="feedback6"></div>
+
+    </div>
+
+
+    <!-- Question 7 -->
+    <div class="question" id="question7">
+
+        <b>7. Which event occurs when a button is clicked?</b>
+
+        <label>
+            <input type="radio" name="q7" value="A">
+            A. onhover
+        </label>
+
+        <label>
+            <input type="radio" name="q7" value="B">
+            B. onclick
+        </label>
+
+        <label>
+            <input type="radio" name="q7" value="C">
+            C. onload
+        </label>
+
+        <label>
+            <input type="radio" name="q7" value="D">
+            D. onchange
+        </label>
+
+        <div class="feedback" id="feedback7"></div>
+
+    </div>
+
+
+    <!-- Question 8 -->
+    <div class="question" id="question8">
+
+        <b>8. Which CSS property changes text color?</b>
+
+        <label>
+            <input type="radio" name="q8" value="A">
+            A. font
+        </label>
+
+        <label>
+            <input type="radio" name="q8" value="B">
+            B. background
+        </label>
+
+        <label>
+            <input type="radio" name="q8" value="C">
+            C. color
+        </label>
+
+        <label>
+            <input type="radio" name="q8" value="D">
+            D. text
+        </label>
+
+        <div class="feedback" id="feedback8"></div>
+
+    </div>
+
+
+    <!-- Question 9 -->
+    <div class="question" id="question9">
+
+        <b>9. What does CSS stand for?</b>
+
+        <label>
+            <input type="radio" name="q9" value="A">
+            A. Computer Style Sheets
+        </label>
+
+        <label>
+            <input type="radio" name="q9" value="B">
+            B. Cascading Style Sheets
+        </label>
+
+        <label>
+            <input type="radio" name="q9" value="C">
+            C. Creative Style System
+        </label>
+
+        <label>
+            <input type="radio" name="q9" value="D">
+            D. Colorful Style Sheets
+        </label>
+
+        <div class="feedback" id="feedback9"></div>
+
+    </div>
+
+
+    <!-- Question 10 -->
+    <div class="question" id="question10">
+
+        <b>10. Which function displays an alert box?</b>
+
+        <label>
+            <input type="radio" name="q10" value="A">
+            A. display()
+        </label>
+
+        <label>
+            <input type="radio" name="q10" value="B">
+            B. message()
+        </label>
+
+        <label>
+            <input type="radio" name="q10" value="C">
+            C. alert()
+        </label>
+
+        <label>
+            <input type="radio" name="q10" value="D">
+            D. popup()
+        </label>
+
+        <div class="feedback" id="feedback10"></div>
+
+    </div>
+
+
+    <!-- Submit Button -->
+    <button type="button" onclick="checkResult()">
+        Submit
+    </button>
+
+
+    <!-- Result -->
+    <div id="result"></div>
+
+</div>
+
+
+<script>
+
+function checkResult() {
+
+    // Correct answers
+    var answers = [
+        "A",
+        "B",
+        "C",
+        "A",
+        "B",
+        "C",
+        "B",
+        "C",
+        "B",
+        "C"
+    ];
+
+    // Correct answer text
+    var correctAnswerText = [
+        "A. Hyper Text Markup Language",
+        "B. CSS",
+        "C. JavaScript",
+        "A. HTTP",
+        "B. &lt;a&gt;",
+        "C. tr",
+        "B. onclick",
+        "C. color",
+        "B. Cascading Style Sheets",
+        "C. alert()"
+    ];
+
+    var score = 0;
+
+    var correctQuestions = [];
+    var wrongQuestions = [];
+    var unansweredQuestions = [];
+
+
+    // Clear old feedback
+    for (var i = 1; i <= 10; i++) {
+
+        document.getElementById("feedback" + i).innerHTML = "";
+
+    }
+
+
+    // Validate all questions
+    for (var i = 1; i <= 10; i++) {
+
+        var selected = document.querySelector(
+            'input[name="q' + i + '"]:checked'
+        );
+
+        var questionBox =
+            document.getElementById("question" + i);
+
+
+        if (selected == null) {
+
+            questionBox.classList.add("unanswered");
+
+            unansweredQuestions.push(i);
+
+        } else {
+
+            questionBox.classList.remove("unanswered");
+
+        }
+
+    }
+
+
+    // Stop if questions are unanswered
+    if (unansweredQuestions.length > 0) {
+
+        alert(
+            "Please answer all questions before submitting.\n\n" +
+            "Unanswered Questions: " +
+            unansweredQuestions.join(", ")
+        );
+
+        document.getElementById(
+            "question" + unansweredQuestions[0]
+        ).scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        return;
+    }
+
+
+    // Check answers
+    for (var i = 1; i <= 10; i++) {
+
+        var selected = document.querySelector(
+            'input[name="q' + i + '"]:checked'
+        );
+
+        var feedback =
+            document.getElementById("feedback" + i);
+
+
+        // Correct answer
+        if (selected.value == answers[i - 1]) {
+
+            score++;
+
+            correctQuestions.push(i);
+
+            feedback.innerHTML =
+                '<div class="correct">' +
+                '✓ Correct Answer' +
+                '</div>';
+
+        }
+
+        // Wrong answer
+        else {
+
+            wrongQuestions.push(i);
+
+            feedback.innerHTML =
+                '<div class="wrong">' +
+                '✗ Wrong Answer' +
+                '</div>' +
+
+                '<div class="correct-answer">' +
+                'Correct Answer: ' +
+                correctAnswerText[i - 1] +
+                '</div>';
+        }
+
+    }
+
+
+    // Display final result
+    document.getElementById("result").innerHTML =
+
+        "<h3>Exam Result</h3>" +
+
+        "<p><b>Your Score: " +
+        score + " / 10</b></p>" +
+
+        "<p><b>Correct Questions:</b> " +
+        (correctQuestions.length > 0
+            ? correctQuestions.join(", ")
+            : "None") +
+        "</p>" +
+
+        "<p><b>Wrong Questions:</b> " +
+        (wrongQuestions.length > 0
+            ? wrongQuestions.join(", ")
+            : "None") +
+        "</p>";
+
+
+    // Alert
+    alert(
+        "Exam Submitted Successfully!\n\n" +
+        "Your Score: " + score + " / 10\n" +
+        "Correct: " + correctQuestions.length +
+        "\nWrong: " + wrongQuestions.length
+    );
+
+}
+
+
+// Remove red validation when an answer is selected
+var radioButtons = document.querySelectorAll(
+    'input[type="radio"]'
+);
+
+
+radioButtons.forEach(function(radio) {
+
+    radio.addEventListener("change", function() {
+
+        var questionNumber =
+            this.name.substring(1);
+
+        document.getElementById(
+            "question" + questionNumber
+        ).classList.remove("unanswered");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

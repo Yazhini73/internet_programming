@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f5f9;
+        }
+
+        .box {
+            width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #1e3a8a;
+            outline: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #172e6b;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Student Registration</h1>
+
+    <form onsubmit="startRegistration(); return false;">
+
+        <!-- Student Name -->
+        <label>Student Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <div id="nameError" class="error"></div>
+
+
+        <!-- Roll Number -->
+        <label>Roll Number</label>
+        <input type="text" id="roll" placeholder="Enter roll number">
+        <div id="rollError" class="error"></div>
+
+
+        <!-- Register Number -->
+        <label>Register Number</label>
+        <input type="text" id="regno" placeholder="Enter register number">
+        <div id="regError" class="error"></div>
+
+
+        <!-- Phone Number -->
+        <label>Phone Number</label>
+        <input type="text" id="phone" placeholder="Enter 10 digit phone number">
+        <div id="phoneError" class="error"></div>
+
+
+        <!-- Email -->
+        <label>Email</label>
+        <input type="text" id="email" placeholder="Enter your email">
+        <div id="emailError" class="error"></div>
+
+
+        <!-- Start Exam Button -->
+        <button type="submit">
+            Start Exam
+        </button>
+
+    </form>
+
+</div>
+
+
+<script>
+
+function startRegistration() {
+
+    try {
+
+        // Get student details
+        var name = document.getElementById("name").value.trim();
+        var roll = document.getElementById("roll").value.trim();
+        var regno = document.getElementById("regno").value.trim();
+        var phone = document.getElementById("phone").value.trim();
+        var email = document.getElementById("email").value.trim();
+
+
+        // Check whether all fields are filled
+        if (name == "" || roll == "" || regno == "" || phone == "" || email == "") {
+
+            throw "Please fill all student details.";
+
+        }
+
+
+        // Validate student name
+        if (!/^[A-Za-z ]+$/.test(name)) {
+
+            throw "Name should contain only letters.";
+
+        }
+
+
+        // Validate phone number
+        if (!/^[0-9]{10}$/.test(phone)) {
+
+            throw "Phone number must contain 10 digits.";
+
+        }
+
+
+        // Validate email
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+
+            throw "Please enter a valid email.";
+
+        } 
+
+
+        // Save student details in localStorage
+        localStorage.setItem("studentName", name);
+        localStorage.setItem("rollNo", roll);
+        localStorage.setItem("regNo", regno);
+        localStorage.setItem("phone", phone);
+        localStorage.setItem("email", email);
+
+
+        // Registration successful
+        alert("Registration Successful!");
+
+
+        // Open exam page
+        window.location.href = "index.html";
+
+    }
+
+    catch (error) {
+
+        // Display error message
+        alert(error);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
