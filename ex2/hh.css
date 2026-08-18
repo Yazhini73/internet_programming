@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    color: SaddleBrown; 
+}
+
+.main-heading {
+    color: DarkSlateGray;
+}
+
+.sub-heading {
+    color: #6b3e2e;
+}
+
+
+.logo-img {
+    box-shadow: 5px 5px 10px gray;
+}
+
+
+.about-text {
+    border: 2px solid Brown;
+    border-radius: 10px;
+    background-color: white;
+    color: SaddleBrown;
+    padding: 20px;
+    width: 60%;
+}
+
+
+.nav-link {
+    color: Brown;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: Red;
+    text-decoration: underline;
+}
