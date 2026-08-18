@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Train Reservation</title>
+</head>
+<body style="background-color:FCF1EB">
+<h1><center><i>AVAILABLE TICKETS & TRAIN ROUTES</i></center></h1>
+
+<center>
+<img src="train.jfif"  width="400" height="200">
+</center>
+
+<table border="1" width="40%" height="50">
+<caption>Live Train Ticket Booking Status</caption>
+<tr>
+<th>Train Route</th>
+<th>Seats Available</th>
+</tr>
+<tr>
+<td>Route A </td>
+<td>200 Seats</td>
+</tr>
+<tr>
+<td>Route B </td>
+<td>120 Seats</td>
+</tr>
+<tr>
+<td>Route C
+</td>
+<td>80 Seats</td>
+</tr>
+<tr>
+<td>Route D </td>
+<td>150 Seats</td>
+</tr>
+</table>
+
+<h2><i><center>TRAIN TICKET RESERVATION</center></i></h2>
+
+<form action="/submit-reservation" method="POST">
+<p>
+<label>Full Name:</label><br>
+<input type="text" name="customer_name" required>
+</p>
+<p>
+<label>Email Address:</label><br>
+<input type="email" name="customer_email" required>
+</p>
+
+<p>
+<label>Select Departure Station:</label><br>
+<select name="departure_station">
+<option value="">Choose Departure</option>
+<option value="Madurai">Madurai</option>
+<option value="Trichy">Trichy</option>
+<option value="Chennai">Chennai</option>
+<option value="Covai">Covai</option>
+</select>
+</p>
+
+<p>
+<label>Select Arrival Station:</label><br>
+<select name="arrival_station">
+<option value="">Choose Arrival</option>
+<option value="Bangalore">Bangalore</option>
+<option value="Hyderabad">Hyderabad</option>
+<option value="Delhi">Delhi</option>
+<option value="Mumbai">Mumbai</option>
+</select>
+</p>
+
+<p>
+<label>Ticket Type:</label><br>
+<input type="radio" name="ticket_type" value="One Way"> One Way
+<input type="radio" name="ticket_type" value="Return"> Return
+</p>
+
+<p>
+<label>Additional Preferences:</label><br>
+<input type="checkbox" name="preferences" value="Window Seat"> Window Seat<br>
+<input type="checkbox" name="preferences" value="Meal Service"> Meal Service<br>
+<input type="checkbox" name="preferences" value="Extra Luggage"> Extra Luggage<br>
+</p>
+
+<p>
+<input type="submit" value="Book Train Tickets Now">
+</p>
+</form>
+
+</body>
+</html>
+

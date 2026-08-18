@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Event Booking</title>
+</head>
+<body style="background-color:EBFCEE">
+<h1><center><i>AVAILABLE EVENTS & SEATS</i></center></h1>
+
+<center>
+<img src="concet.jfif" " width="400" height="200">
+</center>
+
+<table border="1" width="40%" height="50">
+<caption>Live Event Booking Status</caption>
+<tr>
+<th>Event Name</th>
+<th>Seats Available</th>
+</tr>
+<tr>
+<td>Music Concert</td>
+<td>200 Seats</td>
+</tr>
+<tr>
+<td>Tech Conference</td>
+<td>150 Seats</td>
+</tr>
+<tr>
+<td>Art Exhibition</td>
+<td>100 Seats</td>
+</tr>
+<tr>
+<td>Drama Show</td>
+<td>80 Seats</td>
+</tr>
+</table>
+
+<h2><i><center>EVENT DETAILS</center></i></h2>
+<ul>
+<li><b>Venue:</b> Mugula Hall D</li>
+<li><b>Date:</b> March 15, 2026</li>
+<li><b>Entry Fee:</b> $400</li>
+</ul>
+<ol>
+<li>Doors Open & Registration (10:00 AM)</li>
+<li>Online Registration Available</li>
+<li>Multiple Sessions Throughout the Day</li>
+<li>Lunch & Networking Break (1:00 PM)</li>
+</ol>
+
+<h2><i><center>EVENT TICKET RESERVATION</center></i></h2>
+
+<form action="/submit-reservation" method="POST">
+<p>
+<label>Full Name:</label><br>
+<input type="text" name="customer_name" required>
+</p>
+<p>
+<label>Email Address:</label><br>
+<input type="email" name="customer_email" required>
+</p>
+
+<p>
+<label>Select Event:</label><br>
+<select name="event_name" required>
+<option value="">Choose an Event</option>
+<option value="music_concert">Music Concert</option>
+<option value="tech_conference">Tech Conference</option>
+<option value="art_exhibition">Art Exhibition</option>
+<option value="drama_show">Drama Show</option>
+</select>
+</p>
+
+<p>
+<label>Session Time:</label><br>
+<select name="session_time" required>
+<option value="">Choose a Time</option>
+<option value="morning">Morning Session (10:00 AM)</option>
+<option value="afternoon">Afternoon Session (2:00 PM)</option>
+<option value="evening">Evening Session (6:00 PM)</option>
+</select>
+</p>
+
+
+<p>
+<input type="submit" value="Book Event Tickets Now">
+</p>
+</form>
+
+</body>
+</html>

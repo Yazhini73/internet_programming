@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Bus Reservation</title>
+</head>
+<body style="background-color:F6FCEB">
+<h1><center><i>AVAILABLE TICKETS & BUS ROUTES</i></center></h1>
+
+<center>
+<img src="bus.jfif"  width="400" height="200">
+</center>
+
+<table border="1" width="30%" height="50">
+<caption>Live Bus Ticket Booking Status</caption>
+<tr>
+<th>Bus Route</th>
+<th>Seat Available</th>
+</tr>
+<tr>
+<td>Route A (City Center)</td>
+<td>130 Seats</td>
+</tr>
+<tr>
+<td>Route B (Expressway)</td>
+<td>45 Seats</td>
+</tr>
+<tr>
+<td>Route C (Night Rider)</td>
+<td>50 Seats</td>
+</tr>
+<tr>
+<td>Route D (Coastal Way)</td>
+<td>70 Seats</td>
+</tr>
+</table>
+
+<h2><i><center>BUS TICKET RESERVATION</scenter></i></h2>
+
+<form action="/submit-reservation" method="POST">
+<p>
+<label>Full Name:</label><br>
+<input type="text" name="customer_name" required>
+</p>
+<p>
+<label>Email Address:</label><br>
+<input type="email" name="customer_email" required>
+</p>
+
+<p>
+<label>Select Bus Route From:</label><br>
+<select>
+<option value="">Pick up At</option>
+<option value="Central Madurai">Central Madurai</option>
+<option value="Main Road">Main Road</option>
+<option value="Trichy">Trichy</option>
+<option value="Ramnad">Ramnad</option>
+</select>
+
+<label><br>Show time:</label><br>
+<select>
+<option value="">Destrination</option>
+<option value="Chennai">Chennai</option>
+<option value="Covai">Covai</option>
+<option value="Pondi">Pondi</option>
+<option value="Sellem">Sellem</option>
+</select>
+</p>
+
+<p>
+<label>Ticket Type:</label><br>
+<input type="radio" name="ticket_type" value="One Way" required> One Way
+<input type="radio" name="ticket_type" value="Return"> Return
+</p>
+<p>
+<input type="submit" value="Book Tickets Now">
+</p>
+
+</body>
+</html>

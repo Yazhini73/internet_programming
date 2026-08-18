@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Ticket Booking</title>
+</head>
+<body style="background-color:EBECFC">
+<h1><i/><center>AVAILABLE TICKETS & MOVIES</center></i></h1>
+
+<center>
+<img src="cinema.jfif" width="400" height="200">
+</center>
+
+<table border="1" width="30%" height="50">
+<caption>Live Cinema Booking Status</caption>
+<tr>
+<th>Movie Name</th>
+<th>Seat Available</th>
+</tr>
+<tr>
+<td>Alchemy</td>
+<td>130 Seats</td>
+</tr>
+<tr>
+<td>Stranger things</td>
+<td>45 Seats</td>
+</tr>
+<tr>
+<td>Murder</td>
+<td>50 Seats</td>
+</tr>
+<tr>
+<td>Voice</td>
+<td>70 Seats</td>
+</tr>
+</table>
+
+<h2><i><center>LEARN ABOUT THE EVENT DETAILS</center></i></h2>
+<ul>
+<li><b>Venue:</b> D cenima Hall C</li>
+<li><b>Date:</b> March 15, 2026</li>
+<li><b>Entry Fee:</b> $400</li>
+</ul>
+<ol>
+<li>Doors Open & Registration (10:00 AM)</li>
+<li>Online Registration available </li>
+<li>Total Three Shows</li>
+<li>Lunch & Networking Break (1:00 PM)</li>
+</ol>
+
+<h2><i><center>MOVIE TICKET RESERVATION</center></i></h2>
+
+<form action="/submit-reservation" method="POST">
+<p>
+<label>Full Name:</label><br>
+<input type="text" name="customer_name" required>
+</p>
+<p>
+<label>Email Address:</label><br>
+<input type="email" name="customer_email" required>
+</p>
+
+<p>
+<label>Select Movie:</label><br>
+<select>
+<option value="">Choose a Movie</option>
+<option value="alchemy">Alchemy</option>
+<option value="stranger_things">Stranger Things</option>
+<option value="murder">Murder</option>
+<option value="voice">Voice</option>
+</select>
+
+<label><br>Show time:</label><br>
+<select>
+<option value="">Choose a Time</option>
+<option value="alchemy">1st Show (10:10)</option>
+<option value="1st Show (2:10)">Stranger Things</option>
+<option value="murder">1st Show (6:10)</option>
+<option value="voice">1st Show (11:10)</option>
+</select>
+</p>
+<p>
+<input type="submit" value="Book Tickets Now">
+</p>
+
+</body>
+</html>
+
+
