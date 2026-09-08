@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Seeker Registration</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0eded; padding: 30px; }
+        .form { width: 800px; margin: auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        h2 { text-align: center; color: rgb(91,91,94); }
+        .form-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input { width: 100%; height: 32px; padding: 5px; border: 1px solid #bbb; border-radius: 4px; box-sizing: border-box; }
+        .error { color: red; font-size: 13px; margin-top: 5px; }
+        .full-width { grid-column: span 2; }
+        button { width: 100%; padding: 10px; background-color: rgb(91,91,94); color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #555; }
+        #success { text-align: center; color: green; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h2>Job Seeker Registration</h2>
+        <form id="registerForm" action="job-register.jsp" method="post">
+            <div class="form-container">
+                <div>
+                    <label>First Name</label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter first name">
+                    <div class="error" id="fnameError"></div>
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter last name">
+                    <div class="error" id="lnameError"></div>
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com">
+                    <div class="error" id="emailError"></div>
+                </div>
+                <div>
+                    <label>Phone Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="10 digit number">
+                    <div class="error" id="phoneError"></div>
+                </div>
+                <div>
+                    <label>Desired Job</label>
+                    <input type="text" id="job" name="job" placeholder="Example: Web Developer">
+                    <div class="error" id="jobError"></div>
+                </div>
+                <div>
+                    <label>Years of Experience</label>
+                    <input type="number" id="experience" name="experience" min="0" placeholder="e.g. 3">
+                    <div class="error" id="experienceError"></div>
+                </div>
+                <div>
+                    <label>Credit Card Number</label>
+                    <input type="text" id="ccnumber" name="ccnumber" maxlength="19" placeholder="13 to 19 digits">
+                    <div class="error" id="ccnumberError"></div>
+                </div>
+                <div class="full-width">
+                    <button type="submit">Register</button>
+                </div>
+                <div class="full-width">
+                    <div id="success"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(e) {
+            let valid = true;
+            document.querySelectorAll(".error").forEach(function(error) { error.innerHTML = ""; }); 
+            document.getElementById("success").innerHTML = "";
+
+            if(document.getElementById("fname").value.trim() == "") {
+                document.getElementById("fnameError").innerHTML = "First name is required";
+                valid = false; 
+            }
+            if(document.getElementById("lname").value.trim() == "") {
+                document.getElementById("lnameError").innerHTML = "Last name is required";
+                valid = false;
+            }
+            let email = document.getElementById("email").value.trim();
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(email == "") { 
+                document.getElementById("emailError").innerHTML = "Email is required"; 
+                valid = false; 
+            } else if(!emailPattern.test(email)) { 
+                document.getElementById("emailError").innerHTML = "Enter valid email"; 
+                valid = false; 
+            }
+            let phone = document.getElementById("phone").value.trim();
+            if(phone == "") { 
+                document.getElementById("phoneError").innerHTML = "Phone number is required"; 
+                valid = false; 
+            } else if(!/^[0-9]{10}$/.test(phone)) { 
+                document.getElementById("phoneError").innerHTML = "Enter 10 digit phone number"; 
+                valid = false; 
+            }
+            if(document.getElementById("job").value.trim() == "") { 
+                document.getElementById("jobError").innerHTML = "Desired job is required"; 
+                valid = false; 
+            }
+            let exp = document.getElementById("experience").value;
+            if(exp == "") {
+                document.getElementById("experienceError").innerHTML = "Experience is required";
+                valid = false; 
+            } else if(exp < 0) { 
+                document.getElementById("experienceError").innerHTML = "Experience cannot be negative"; 
+                valid = false; 
+            }
+            let ccnumber = document.getElementById("ccnumber").value.trim();
+            if(ccnumber == "") {
+                document.getElementById("ccnumberError").innerHTML = "Credit card number is required";
+                valid = false;
+            } else if(!/^\d{13,19}$/.test(ccnumber)) {
+                document.getElementById("ccnumberError").innerHTML = "Enter a valid card number (13-19 digits)";
+                valid = false;
+            }
+
+            if(!valid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
