@@ -1,0 +1,140 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Session Tracking</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            width: 380px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .login-container p {
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.4);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background-color: #667eea;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background-color: #5568d9;
+        }
+
+        .info {
+            margin-top: 25px;
+            padding: 12px;
+            background-color: #f3f4ff;
+            border-radius: 8px;
+            text-align: center;
+            color: #555;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>Welcome Back</h1>
+
+        <p>Session Tracking System</p>
+
+        <form action="LoginServlet" method="post">
+
+            <div class="input-group">
+                <label for="username">Username</label>
+
+                <input type="text"
+                       id="username"
+                       name="username"
+                       placeholder="Enter your username"
+                       required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+
+                <input type="password"
+                       id="password"
+                       name="password"
+                       placeholder="Enter your password"
+                       required>
+            </div>
+
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+        </form>
+
+        <div class="info">
+            <p>Session Tracking using Java Servlets</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+

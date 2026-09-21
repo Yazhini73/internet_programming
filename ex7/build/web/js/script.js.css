@@ -1,0 +1,88 @@
+```javascript
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("My Portfolio Loaded Successfully!");
+
+    /* -------------------------------
+       Active Navigation Link
+    -------------------------------- */
+
+    const links = document.querySelectorAll("nav a");
+
+    const currentPage =
+        window.location.pathname.split("/").pop();
+
+    links.forEach(function (link) {
+
+        const linkPage =
+            link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+
+        link.addEventListener("click", function () {
+
+            links.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            this.classList.add("active");
+        });
+
+    });
+
+
+    /* -------------------------------
+       Contact Form
+    -------------------------------- */
+
+    const form =
+        document.getElementById("contactForm");
+
+    if (form) {
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const message =
+                document.getElementById("message").value.trim();
+
+
+            if (name === "") {
+                alert("Please enter your name.");
+                return;
+            }
+
+            if (email === "") {
+                alert("Please enter your email.");
+                return;
+            }
+
+            if (message === "") {
+                alert("Please enter your message.");
+                return;
+            }
+
+
+            alert(
+                "Thank you, " +
+                name +
+                "! Your message has been submitted."
+            );
+
+            form.reset();
+
+        });
+
+    }
+
+});
+```

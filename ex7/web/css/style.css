@@ -1,0 +1,250 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
+
+/* Navigation */
+nav {
+    background: #222;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #00adb5;
+}
+
+/* Home */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background: #ffffff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #00adb5;
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: #00adb5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #008b92;
+}
+
+/* Common Page */
+.page {
+    min-height: 80vh;
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.page h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+/* About */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
+}
+
+.about img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.about h2 {
+    margin-bottom: 15px;
+}
+
+.about p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.skill {
+    background: white;
+    width: 250px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill h2 {
+    color: #00adb5;
+    margin-bottom: 15px;
+}
+
+.skill p {
+    line-height: 1.5;
+}
+
+/* Projects */
+.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.project {
+    background: white;
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project h2 {
+    color: #00adb5;
+    margin-bottom: 15px;
+}
+
+.project p {
+    line-height: 1.6;
+}
+
+/* Contact Form */
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #00adb5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #008b92;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about img {
+        width: 180px;
+        height: 180px;
+    }
+}
+```
